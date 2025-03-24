@@ -68,6 +68,17 @@ wird die JSON-Datei in den klassenspezifischen Sentiment- und Intent-Unterordner
 gespeichert. Diese Vorgehensweise dient der besseren Übersicht über die Klassenverteilung
 und dem einfachen Laden der Daten in die Modelle. 
 
+\subsection{Sample Balancing}
+
+Ein zentrales Problem im Projekt war das Sample-Balancing. Viele Kategorien waren stark
+unterrepräsentiert, wodurch das Training des Modells erschwert wurde. In einem ersten Schritt wurde
+der Dataloader ohne jegliche Korrektur getestet, was zu unausgewogenen Ergebnissen führte. Danach
+wurden verschiedene Techniken ausprobiert: Undersampling, bei dem die Kategorie mit der niedrigsten
+Verfügbarkeit als Grenze gesetzt wurde, und Oversampling mittels eines Weighted Random Samplers, der
+für ausgeglichene Batches im Training sorgte. Diese Methode erzielte letztlich die besten Ergebnisse
+und bildete die Grundlage für die weitere Optimierung des Sentiment-Modells. Zusätzlich wurde ein
+„augmented“-Modus eingeführt, bei dem Kategorien mit wenigen Samples durch generierte Daten ergänzt
+wurden, unter Verwendung des zuvor entwickelten Paraphrasierers.
 
 
 \section{Modelltraining}
