@@ -151,8 +151,17 @@ gute Ergebnisse zu erzielen.
 
  
 
-Kann man das einfach so schreiben? Oder muss man das belegen? Also mit Metriken 
+Kann man das einfach so schreiben? Oder muss man das belegen? Also mit Metriken
 
+
+
+\subsection{Intent} 
+Für die Intent-Analyse wurde derselbe Ansatz wie bei der Sentiment-Analyse gewählt. Grundlegende Techniken wie Weighted Random Sampling, Dropout, adaptive Lernratenanpassung und Layer-Freezing kamen zum Einsatz, um das Modell zu optimieren. Zwei unterschiedliche Ausgangsmodelle wurden untersucht: Zum einen das BERT-German-Uncased-Modell, das speziell für die Klassifikation deutscher Dokumente konzipiert ist, und zum anderen DistilBERT, ein kleineres Modell, das getestet wurde, um Ressourcen zu schonen. Die besten Ergebnisse erzielte das BERT-German-Uncased-Modell.
+
+Als weitere Fine Tuning Technik wurde LoRA (Low-Rank Adaptation) eingesetzt, das eine ressourcenschonende Anpassung von vortrainierten Modellen ermöglicht. Die Hauptgewichtungen eines vortrainierten Modells wird dabei eingefroren und stattdessen trainierbare, nieder-rangige Matrizen eingefügt. Dadurch werden nur wenige Parameter angepasst, was einen ressourcenschonenden und effizientes Fine Tuning ermöglicht.
+Der Einsatz von LoRA führte jedoch nicht zu einer signifikanten Leistungsverbesserung. Aufgrund von Zeitbeschränkungen wurde der Großteil der Evaluierungen zunächst im Bereich der Sentiment-Erkennung durchgeführt, sodass der Fokus bei der Intent-Erkennung etwas zurückgestellt werden musste.
+
+Die Erkennungsgenauigkeit des Modells variiert stark je nach Klasse. Klassen mit häufig verwendeten Begriffen und einer großen Anzahl von Beispielen, wie etwa die Freigabe einer Druckskizze, wurden deutlich präziser klassifiziert als Intents mit sehr heterogenen Beispielen. Ein wesentlicher Problempunkt stellt zudem eine ungenaue Labelvergabe dar, welche durch fehlenden Kontext und unterschiedliche Interpretationen der Klassen entsteht. Zukünftig könnte ein Few-Shot-Learning-Ansatz zur Datenbereinigung, ähnlich wie bei der Sentiment-Analyse, zur Verbesserung der Qualität der Labels beitragen.
 
 
 \section{Schnittstelle/GUI}
