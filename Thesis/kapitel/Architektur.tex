@@ -3,7 +3,7 @@
 
 \section{EDA}
 
-\subsection{ANTWORTSNIPPETS}
+\subsection{Antwortsnippets}
 
 % Ein Bestandteil des Projekts war die Analyse von
 % Intention-Kategorien. Ziel war es, aus einer Vielzahl von Antwortsnippets
@@ -117,7 +117,7 @@ großer Datensatz für das Training eines großen Modells vorhanden ist.
 Aufgrund der geringen Anzahl an Trainingsdaten und der unbalancierten Klassen wurden keine 
 verwendbaren Labels erzeugt, weshalb sich auf Few-Shot Learning und Parahprasing fokussiert wurde. 
 
-
+\newpage
 \section{Modelltraining}
 
 \subsection{Allgemeines}
@@ -219,7 +219,7 @@ Sentiment-Analyse, zur Verbesserung der Qualität der Labels beitragen.
 
 
 
-\section{Schnittstelle/GUI}
+\section{Schnittstelle und Webapp}
 
 \subsection{Schnittstelle}
 
@@ -231,20 +231,21 @@ von Datentypen und der Verknüpfung von App-Funktionen mit der API. Ein grundleg
 REST-API-Konzepten und den spezifischen Mechanismen von Connexion Flask war entscheidend, um diese Probleme
 zu lösen. 
 
-\subsection{GUI}
-
 Die Containerisierung der Schnittstelle wurde mittels Docker umgesetzt. Dafür wurde ein
 Dockerfile auf Basis eines miniconda Docke-Image erstellt, wobei das entsprechende conda
 Environment vom Server exportiert und im Container genutzt wird. Die Umsetzung erfolgte mithilfe
 von Docker-Compose, welches zwei eigenständige Services bereitstellt: 
 
-Der erste Service namens mailanalysis ist über die Anwendung app.py realisiert und erlaubt
+Der erste Service namens mail\textunderscore analysis ist über die Anwendung app.py realisiert und erlaubt
 das flexible Austauschen der verwendeten Modelle, beispielsweise um nachtrainierte Sentiment-
-oder Intent-Modelle einzubinden. Der zweite Service gradioapp stellt eine Weboberfläche bereit,
-die über die Anwendung gradio app.py umgesetzt ist. Diese Webapp ist auf dem Server unter der
+oder Intent-Modelle einzubinden. Der zweite Service gradio\textunderscore app stellt eine Weboberfläche bereit,
+die über die Anwendung gradio\textunderscore app.py umgesetzt ist. Diese Webapp ist auf dem Server unter der
 Adresse http://138.199.202.254:8000 erreichbar. Bei Nutzeranfragen greift die Webapp intern
-auf den Service mailanalysis zu, welcher die Verarbeitung der Anfragen mit den hinterlegten
-Modellen übernimmt und anschließend die Ergebnisse auf der Weboberfläche darstellt. 
+auf den Service mail\textunderscore analysis zu, welcher die Verarbeitung der Anfragen mit den hinterlegten
+Modellen übernimmt und anschließend die Ergebnisse auf der Weboberfläche darstellt. Auf die genauen Funktionen der 
+Webapp wird im folgenden Abschnitt geanuer eingegangen. 
+
+\subsection{Webapp}
 
 Die Webapp für unseren Prototypen wurde mit der Python Library Gradio implementiert und besteht
 aus drei Hauptseiten: einer Instruktionsseite, einer Klassifikationsseite und einer Seite für
