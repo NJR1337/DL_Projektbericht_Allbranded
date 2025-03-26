@@ -197,8 +197,8 @@ uneindeutig formuliert wurden, auch im Vorhinein aussortiert wurden. Dadurch wir
 Testdaten vereinfacht. 
  
 \subsubsection{Modellergebnisse}
-In der folgenden Tabelle sind einmal übersichtlich alle besten Modelle der oben aufgeführten
-Ansätze für die Sentimentklassifikation. 
+In der folgenden Tabelle sind einmal übersichtlich die besten Modelle der oben aufgeführten
+Ansätze für die Sentimentklassifikation dargestellt. 
 
 \begin{table}[H]
 \hspace*{-1cm}
@@ -208,11 +208,13 @@ Ansätze für die Sentimentklassifikation.
          \textbf{Modell} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Anmerkungen} \\
          \midrule
          \textbf{BERT (Basic)} & 0.8223 & 0.8824 & 0.8223 & 0.8404 & Ungesäuberte Daten \\
-         \textbf{BERT Few-Shot} & 0.9373 & 0.9476 & 0.9373 & 0.9401 & Gesäuberte Daten \\
          \textbf{BERT Few-Shot} & 0.6641& 0.8396 & 0.6641 & 0.7199 & Ungesäuberte Daten \\
          \textbf{BERT Sentiment} & 0.8386 & 0.9468 & 0.8336 & 0.8820 & Ungesäuberte Daten \\
          \textbf{BERT + SVM} & 0.86 & 0.822 & 0.859 & 0.826 & Ungesäuberte Daten\\
          \textbf{Logistische Regression} & 0.7962& 0.8243 & 0.7962 & 0.8084 & Ungesäuberte Daten\\
+         \midrule
+         \textbf{BERT Few-Shot} & 0.9123& 0.9354 & 0.9123 & 0.9173 & Gesäuberte Daten \\
+         \textbf{BERT Few-Shot} & 0.9373 & 0.9476 & 0.9373 & 0.9401 & Gesäuberte Daten \\
          \bottomrule
 \end{tabular}
 \caption{Übersicht Modellergebnisse Sentiment}
