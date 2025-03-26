@@ -164,6 +164,15 @@ torzt der ergänzung von Methoden wie PCA und Under- und Oversampling und versch
 Hyperparameterkombinationen der SVM zu keinen besseren Ergebnissen als das Finetuning eines
 Vortrainierten BERT-Transformers führt.  
 
+\subsubsection{Logistische Regression}
+
+Die logistische Regression benötigt numerische Features, weshalb zur Umwandlung der 
+Textdaten die Methode Term Frequency-Inverse Document Frequency (TF-IDF) verwendet wurde. Diese Methode 
+berücksichtigt sowohl die Häufigkeit eines Wortes als auch dessen relative Seltenheit. Für jedes Sentiment 
+wird eine lineare Kombination der numerischen Feature-Werte mit spezifischer Gewichtung berechnet.
+ Anschließend werden die berechneten Werte mittels einer Softmax-Funktion in Konfidenzwerte umgerechnet,
+  welche für die Klassenvorhersage genutzt werden. Das Modell ermöglicht ein schnelles Training und eine rasche Klassifizierung,
+ zeigte jedoch im Vergleich zu Ansätzen mit Transformern schlechtere Ergebnisse. 
 
 \subsubsection{Few-Shot Learning}
 
