@@ -1,0 +1,64 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\preamble{%
+\providecommand{\NOOPSORT}[1]{}%
+}
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{Mirończuk}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=5a2f8d8fdf5cb5e39518df11b76db68b}{%
+           family={Mirończuk},
+           familyi={M\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=12ed69e2d727e04440ba00b90f1bb016}{%
+           family={Protasiewicz},
+           familyi={P\bibinitperiod},
+           given={Jaroslaw},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{fullhash}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{fullhashraw}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{bibnamehash}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{authorbibnamehash}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{authornamehash}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{authorfullhash}{e671b518ba338a0aadee3b7b455c0e66}
+      \strng{authorfullhashraw}{e671b518ba338a0aadee3b7b455c0e66}
+      \field{labelalpha}{MP18}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{month}{03}
+      \field{title}{A Recent Overview of the State-of-the-Art Elements of Text Classification}
+      \field{volume}{106}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2018.03.058
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
