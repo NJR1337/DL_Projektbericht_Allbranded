@@ -15,11 +15,11 @@
 % Basis für die weitere Verarbeitung zu legen. 
 
 Ein  Bestandteil des Projekts war die Analyse von Intention-Kategorien, bzw. der E-Mail-Anfragen 
-die das Customer Support die zu bearbeiten hatte. Ziel war es, aus einer Vielzahl von Antwortvorschlägen 
+die der Customer Support die zu bearbeiten hatte. Ziel war es, aus einer Vielzahl von Antwortvorschlägen 
 (oder Antwortsnippets) aus dem Customer-Support-Templates zentrale Kategorien wie „Lieferstatus“ oder 
 „Expressversand“ zu extrahieren. Parallel standen uns ca. 110 Beispiel-Mails zur Verfügung, aus der wir 
 eine Verteilung der Anfragen abgeleitet haben. Die Verteilungsanalyse wurde benutzt um häufige Fragen 
-der Kunden zu identifizieren und in relevante Themenbereiche zu erstellen, um die Antwortvorschläge zu 
+der Kunden zu identifizieren und in relevante Themenbereiche einzuteilen, um die Antwortvorschläge zu 
 aggregieren. Die Aggregation der Antwortsnippets und die Abschätzung benötigter Intentionen halfen, 
 eine klare Struktur zu schaffen und eine fundierte Basis für die weitere Verarbeitung zu legen.
 
@@ -95,7 +95,7 @@ und dem einfachen Laden der Daten in die Modelle.
 \subsection{Sample Balancing}
 
 Ein zentrales Problem im Projekt war das Sample-Balancing. Viele Kategorien waren stark
-unterrepräsentiert, wodurch das Training des Modells erschwert wurde. In einem ersten Schritt wurde
+unterrepräsentiert, wodurch das Training der Modelle erschwert wurde. In einem ersten Schritt wurde
 der Dataloader ohne jegliche Korrektur getestet, was zu unausgewogenen Ergebnissen führte. Danach
 wurden verschiedene Techniken ausprobiert: Undersampling, bei dem die Kategorie mit der niedrigsten
 Verfügbarkeit als Grenze gesetzt wurde, und Oversampling mittels eines Weighted Random Samplers, der
@@ -108,7 +108,7 @@ wurden, unter Verwendung des zuvor entwickelten Paraphrasierers.
 
 Aufgrund der Problematik der ungelabelten Trainingsdaten wurde der Self-Training Ansatz
 untersucht um den Aufwand für das Labeln zu senken. Self-Training gehört zum Semi-Supervised
-Learning und bei dem zu Beginn ein Modell auf einem kleinen Datensatz Trainiert wird. Die
+Learning bei dem zu Beginn ein Modell auf einem kleinen Datensatz Trainiert wird. Die
 erlernten Labels soll das Modell dann auf die ungelabelten Daten übertragen. Die Pseudo-Labels
 des Modells werden nur übernommen und dem Trainingsdatensaz hinzugefügt, wenn sie einen
 Schwellwert übersteigen. Dieser Ablauf wird solange iterativ durchgeführt, bis ein ausreichend
@@ -132,7 +132,7 @@ huggingface zurück und führten Fine-Tunings durch, um die Modelle für die spe
 Intent- und Sentimentklassifikation zu verwenden.
 
 Um die trainierten Modelle zu testen, wurden mehrere Metrics-Dateien erstellt, welche die zuvor 
-gespeicherten Modelle laden und die Performance auf den Testdaten messen. Zu Messung der Performance 
+gespeicherten Modelle laden und die Performance auf den Testdaten messen. Zur Messung der Performance 
 wurde der F1-Score, zusammengesetzt aus Precision und Recall herangezogen. Der Score wurde dabei für 
 alle Testdaten ermittelt, und zusätzlich für die einzelnen Kategorien, was uns weitere interessante 
 Einblicke in die Performance unserer Modelle lieferte.
@@ -160,7 +160,7 @@ Aufgrund der zuvor beschriebenen Thematik der unbalancierten Klassen in den Sent
 Intent Daten wurde der Ansatz BERT+SVM als Vergleich herangezogen. Die Beiden Ansätze wurden
 in Kombination verwendet, wobei die druch den BERT-Transformer generierten Embeddings als Input
 für die Support-Vektor-Machine (SVM) dienen. Es hat sich aber herausgestellt, dass der Ansatz
-torzt der ergänzung von Methoden wie PCA und Under- und Oversampling und verschiedenen
+torzt der Ergänzung von Methoden wie PCA und Under- und Oversampling und verschiedenen
 Hyperparameterkombinationen der SVM zu keinen besseren Ergebnissen als das Finetuning eines
 Vortrainierten BERT-Transformers führt.  
 
@@ -171,7 +171,7 @@ Textdaten die Methode Term Frequency-Inverse Document Frequency (TF-IDF) verwend
 berücksichtigt sowohl die Häufigkeit eines Wortes als auch dessen relative Seltenheit. Für jedes Sentiment 
 wird eine lineare Kombination der numerischen Feature-Werte mit spezifischer Gewichtung berechnet.
  Anschließend werden die berechneten Werte mittels einer Softmax-Funktion in Konfidenzwerte umgerechnet,
-  welche für die Klassenvorhersage genutzt werden. Das Modell ermöglicht ein schnelles Training und eine rasche Klassifizierung,
+  welche für die Klassenvorhersage genutzt werden. Das Modell ermöglicht ein schnelles Training und eine schnelle Klassifizierung,
  zeigte jedoch im Vergleich zu Ansätzen mit Transformern schlechtere Ergebnisse. 
 
 \subsubsection{Few-Shot Learning}
@@ -198,7 +198,7 @@ Testdaten vereinfacht.
  
 
 \subsubsection{Modellergebnisse}
-In der folgenden Tabelle sind einmal übersichtlich die besten Modelle der oben aufgeführten
+In der folgenden Tabelle sind die besten Modelle der oben aufgeführten
 Ansätze für die Sentimentklassifikation dargestellt. 
 
 \begin{table}[H]
@@ -251,7 +251,7 @@ Zukünftig könnte ein Few-Shot-Learning-Ansatz zur Datenbereinigung, ähnlich w
 Sentiment-Analyse, zur Verbesserung der Qualität der Labels beitragen. 
 \newpage
 \subsubsection{Modellergebnisse}
-In der folgenden Tabelle sind einmal die beiden besten Modelle für die Intentklassifikation
+In der folgenden Tabelle sind die beiden besten Modelle für die Intentklassifikation
 aufgeführt. 
 
 \begin{table}[H]
